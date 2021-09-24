@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+:root {
+     --very-dark-grayish-blue: hsl(217, 19%, 35%);
+     --desaturated-dark-blue: hsl(214, 17%, 51%);
+     --grayish-blue: hsl(212, 23%, 69%);
+     --light-gayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+html, body {
+     background-color: var(--light-gayish-blue);
+     font-family: 'Manrope', sans-serif;
+     min-height: 100vh;
+     width: 100%;
+}
+
+.component-main {
+     display: grid;
+     min-height: 100vh;
+     padding: 2rem;
+     place-content: center;
+}
+
+.component-container {
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 1px 30px 80px -35px rgba(0, 0, 0, 0.25);
+     display: grid;
+     /* grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); */
+     grid-template-columns: 22rem 1fr;
+     max-width: 55rem;
+     position: relative;
+     overflow: visible;
+     z-index: 1;
+}
+
+.component-img {
+     height: 100%;
+     object-fit: cover;
+     object-position: 0 100%;
+     width: 100%;
+     border-radius: 10px 0 0 10px;
+}
+
+.component-content {
+     color: var(--very-dark-grayish-blue);
+     padding: 2.5rem;
+}
+
+.component-content h1 {
+     font-size: 1.5rem;
+     padding-bottom: 1rem;
+}
+
+.component-content p {
+     color: var(--desaturated-dark-blue);
+     line-height: 1.6;
+}
+
+.component-content footer {
+     align-items: center;
+     display: grid;
+     gap: 1rem;
+     grid-template-columns: 3rem 1fr 2.5rem;
+     padding-top: 2rem;
+}
+
+.component-info p {
+     color: var(--grayish-blue);
+}
+
+.component-img-author {
+     border-radius: 50%;
+     height: 3rem;
+     width: 3rem;
+     object-fit: contain;
+     width: 100%;
+}
+
+.component-share, .component-share-mobile {
+     all: unset;
+     background-color: var(--light-gayish-blue);
+     border-radius: 50%;
+     cursor: pointer;
+     display: grid;
+     height: 2.5rem;
+     place-content: center;
+     place-items: center;
+     position: relative;
+     transition: background-color 0.3s ease-in;
+}
+
+
+.active {
+     background-color: var(--desaturated-dark-blue);
+     transition: background-color 0.3s ease-out;
+}
+.component-popup {
+     animation: fadeOut 0.3s;
+     display: none;
+     bottom: 200%;
+     position: absolute;
+     width: 20rem;
+     z-index: 2;
+}
+
+.component-popup-mobile {
+     display: none;
+     bottom: 0;
+     left: 0;
+     position: absolute;
+     width: 100%;
+}
+
+
+.component-popup-content p, .component-popup-content-mobile p {
+     color: var(--grayish-blue);
+     font-size: 1rem;
+     justify-self: center;
+     letter-spacing: 0.5rem;
+     overflow: hidden;
+     text-transform: uppercase;
+}
+
+.component-popup-content-mobile {
+     display: none;
+}
+
+.component-popup-content {
+     align-items: center;
+     background-color: var(--very-dark-grayish-blue);
+     border-radius: 15px;
+     box-shadow: 1px 15px 30px -5px rgba(0, 0, 0, 0.25);
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     min-height: 3rem;
+     overflow: hidden;
+     padding: 1.25rem 2rem;
+}
+
+.component-popup-content::after {
+     border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
+     border-style: solid;
+     border-width: 0.85rem;
+     content: "";
+     left: 45%;
+     position: absolute;
+     top: 100%;
+}
+
+.component-popup-icons {
+     display: grid;
+     grid-template-columns: repeat(3, auto);
+     list-style: none;
+     place-items: center;
+}
+
+.component-popup-icons-mobile li a, .component-popup-icons li a{
+     display: grid;
+     place-items: center;
+}
+
+.component-popup-icons img, .component-popup-icons-mobile img {
+     height: auto;
+     object-fit: contain;
+     min-width: 20px;
+     width: 120%;
+}
+
+.component-share svg, .component-share-mobile svg {
+     transform: scale(1.2);
+}
+
+.component-share svg path {
+     transition: fill 0.3s ease-in;
+}
+
+.active-svg {
+     fill: white;
+}
+
+.active-popup {
+     animation: fadeIn 0.3s;
+     display: block;
+}
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateY(100%);
+     }
+     to {
+          opacity: 1;
+          transform: translateY(0%)
+     }
+}
+
+/* @keyframes fadeOut {
+     from {
+          opacity: 1;
+          transform: translateY(0%)
+     }
+     to {
+          opacity: 0;
+          transform: translateY(100%)
+     }
+} */
+
+@media (max-width: 70rem) {
+     .component-img {
+          border-radius: 10px 10px 0 0;
+     }
+     .component-container {
+          max-width: 23.75rem;
+          min-width: 21.5rem;
+     }
+     .component-content h1 {
+          font-size: 1.25rem;
+     }
+     .component-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 15rem 1fr;
+     }
+     .component-img {
+          object-position: 100% 0;
+     }
+     .component-content {
+          padding: 2.5rem 2rem 1.5rem 2rem;
+     }
+
+     .component-popup-icons-mobile {
+          display: grid;
+          gap: 1.5rem;
+          grid-template-columns: repeat(3, auto);
+          list-style: none;
+          align-items: center;
+          align-content: center;
+          justify-content: start;
+          padding-left: 1.5rem;
+     }
+
+     .component-popup-content-mobile {
+          align-items: center;
+          background-color: var(--very-dark-grayish-blue);
+          border-radius: 0 0 10px 10px;
+          box-shadow: unset;
+          display: grid;
+          grid-template-columns: auto 1fr 2.5rem;
+          padding: 1.5rem 2rem;
+          min-height: 5.75rem;
+          overflow: hidden;
+     }
+
+     .component-share-mobile {
+          width: 2.5rem;
+     }
+
+     .component-popup-content::after {
+          display: none;
+     }
+
+     .component-popup-content {
+          display: none;
+     }
+     @keyframes fadeIn {
+          from {
+               opacity: 0;
+               transform: translateY(-100%);
+          }
+          to {
+               opacity: 1;
+               transform: translateY(0%)
+          }
+     }
+
+}
+
+@media (max-width: 25rem){
+     .component-main {
+          transform: scale(0.80);
+     }
+}
