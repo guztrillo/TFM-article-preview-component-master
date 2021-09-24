@@ -29,7 +29,7 @@ Users should be able to:
 
 ### What I learned
 
-At the beginning I was a little confuse about what was the better approach to solve this. Actually, still I don't know if my solution is completly correct, but at least it works.
+At the beginning I was a little confuse about what was the better approach to solve this. Actually, still I don't know if my solution is completely correct, but at least it works.
 
 I made the HTML and CSS part very quickly. Where I had to think a little bit harder were with the JavaScript part. Which is funny because I took a path where most of the the job is using CSS.
 
