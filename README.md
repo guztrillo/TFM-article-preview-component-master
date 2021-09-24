@@ -16,7 +16,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Article preview component](https://guztrillo.github.io/TFM-social-proof-section-master/)
+- Live Site URL: [Article preview component](https://guztrillo.github.io/TFM-article-preview-component-master/)
 
 ## My process
 
