@@ -31,7 +31,6 @@ html, body {
      border-radius: 10px;
      box-shadow: 1px 30px 80px -35px rgba(0, 0, 0, 0.25);
      display: grid;
-     /* grid-template-columns: repeat(auto-fit, minmax(20rem, auto)); */
      grid-template-columns: 22rem 1fr;
      max-width: 55rem;
      position: relative;
@@ -82,8 +81,7 @@ html, body {
      width: 100%;
 }
 
-.component-share, .component-share-mobile {
-     all: unset;
+.component-share {
      background-color: var(--light-gayish-blue);
      border-radius: 50%;
      cursor: pointer;
@@ -95,23 +93,16 @@ html, body {
      transition: background-color 0.3s ease-in;
 }
 
-
-.active {
-     background-color: var(--desaturated-dark-blue);
-     transition: background-color 0.3s ease-out;
-}
 .component-popup {
-     animation: fadeOut 0.3s;
-     display: none;
      bottom: 200%;
+     display: none;
      position: absolute;
      width: 20rem;
-     z-index: 2;
 }
 
 .component-popup-mobile {
-     display: none;
      bottom: 0;
+     display: none;
      left: 0;
      position: absolute;
      width: 100%;
@@ -125,10 +116,6 @@ html, body {
      letter-spacing: 0.5rem;
      overflow: hidden;
      text-transform: uppercase;
-}
-
-.component-popup-content-mobile {
-     display: none;
 }
 
 .component-popup-content {
@@ -160,19 +147,16 @@ html, body {
      place-items: center;
 }
 
-.component-popup-icons-mobile li a, .component-popup-icons li a{
+ .component-popup-icons li a{
      display: grid;
      place-items: center;
 }
 
-.component-popup-icons img, .component-popup-icons-mobile img {
-     height: auto;
-     object-fit: contain;
-     min-width: 20px;
+.component-popup-icons img {
      width: 120%;
 }
 
-.component-share svg, .component-share-mobile svg {
+.component-share svg {
      transform: scale(1.2);
 }
 
@@ -187,6 +171,11 @@ html, body {
 .active-popup {
      animation: fadeIn 0.3s;
      display: block;
+}
+
+.active {
+     background-color: var(--desaturated-dark-blue);
+     transition: background-color 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -214,32 +203,22 @@ html, body {
 @media (max-width: 70rem) {
      .component-img {
           border-radius: 10px 10px 0 0;
+          object-position: 100% 20%;
      }
      .component-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 14.5rem 1fr;
           max-width: 23.75rem;
           min-width: 21.5rem;
      }
      .component-content h1 {
           font-size: 1.25rem;
      }
-     .component-container {
-          grid-template-columns: 1fr;
-          grid-template-rows: 15rem 1fr;
-     }
-     .component-img {
-          object-position: 100% 0;
-     }
      .component-content {
           padding: 2.5rem 2rem 1.5rem 2rem;
      }
-
-     .component-popup-icons-mobile {
-          display: grid;
+     .component-popup-icons {
           gap: 1.5rem;
-          grid-template-columns: repeat(3, auto);
-          list-style: none;
-          align-items: center;
-          align-content: center;
           justify-content: start;
           padding-left: 1.5rem;
      }
@@ -253,11 +232,6 @@ html, body {
           grid-template-columns: auto 1fr 2.5rem;
           padding: 1.5rem 2rem;
           min-height: 5.75rem;
-          overflow: hidden;
-     }
-
-     .component-share-mobile {
-          width: 2.5rem;
      }
 
      .component-popup-content::after {
